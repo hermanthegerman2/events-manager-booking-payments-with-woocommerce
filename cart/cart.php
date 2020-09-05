@@ -20,7 +20,7 @@ function blz_eventwoo_display_cart_item_custom_meta_data( $item_data, $cart_item
         $url = get_permalink( $manage_bookings_page );
         $item_data[] = array(
             'key'       => "manage-booking-button",
-            'value'     => "<a  class='button button-secondary' href='$url'>" . __('Manage My Bookings', 'eventwoo') . "</a>",
+            'value'     => "<a  class='button button-secondary' href='$url'>" . __('Meine Buchungen verwalten', 'eventwoo') . "</a>",
         );
     }
     return $item_data;
@@ -97,7 +97,7 @@ function blz_eventwoo_add_event_product() {
     $booking_ids = array();
     $booking_count = 0;
     $event_table = "<table class='cart-event-table'>";
-    $heading_event_name = __('Event Name', 'eventwoo');
+    $heading_event_name = __('Name der Veranstaltung', 'eventwoo');
     $heading_places = __('Places', 'eventwoo');
     $event_table .= "<tr><th>$heading_event_name</th><th>$heading_places</th></tr>";        
     foreach($bookings as $booking){
@@ -123,8 +123,8 @@ function blz_eventwoo_add_event_product() {
     if ($booking_count > 0){
         $result = $woocommerce->cart->add_to_cart($product_id, 1, 0, array(), $cart_item_data);
         if ( ( $result == null ) || ( $result == false ) ){
-            wc_add_notice( __('Could not add event booking to cart.', 'eventwoo'), 'error');
-            error_log ( __( 'Could not add event booking to cart, there is a good change that this is due to the Event Booking product missing.', 'eventwoo' ) );
+            wc_add_notice( __('Die Veranstaltungsbuchung konnte nicht in den Warenkorb gelegt werden.', 'eventwoo'), 'error');
+            error_log ( __( 'Konnte die Veranstaltungsbuchung nicht in den Warenkorb legen.', 'eventwoo' ) );
         }
     }
 }
@@ -184,7 +184,7 @@ function blz_eventwoo_cart_item_remove_to_bookings( $link, $cart_item_key ){
         // TODO - Would be better to redirect the remove item button to the Manage My Bookings page 
         // but WooCommerce intercepts the button and causes an Ajax reload which stops any redirect
         // working.
-        $message = __( 'To remove this line, remove your unpaid bookings using the Manage My Bookings page.', 'eventwoo' );
+        $message = __( 'Um diese Zeile zu entfernen, entfernen Sie Ihre unbezahlten Buchungen über die Seite Meine Buchungen verwalten.', 'eventwoo' );
         $link = "<span class='remove disabled' title='$message'>&times;</span>";
     }
     return $link;
