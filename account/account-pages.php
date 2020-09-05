@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 function blz_eventwoo_my_account_page_bookings_button( $items, $endpoints ){
     $orders_pos = 2;
     $items_start = array_splice( $items, $orders_pos);
-    $items['../events/my-bookings'] = __( 'My Bookings', 'eventwoo' );
+    $items['../events/my-bookings'] = __( 'Meine Buchungen', 'eventwoo' );
     return $items + $items_start;
 }
 add_filter( 'woocommerce_account_menu_items', 'blz_eventwoo_my_account_page_bookings_button', 10, 2 );
