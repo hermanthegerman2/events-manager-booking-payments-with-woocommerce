@@ -11,8 +11,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  * @return array $cols
  */
 function blz_eventwoo_bookings_table_cols( $cols, $EM_Bookings_table ) {
-    $cols['coupons_used'] = __('Coupons Used', 'eventwoo');
-    $cols['order_total'] = __('Order Total', 'eventwoo');
+    $cols['coupons_used'] = __('Verwendete Gutscheine', 'eventwoo');
+    $cols['order_total'] = __('Bestellung gesamt', 'eventwoo');
     return $cols;
 }
 add_filter( 'em_bookings_table_cols_template', 'blz_eventwoo_bookings_table_cols', 10, 2);
