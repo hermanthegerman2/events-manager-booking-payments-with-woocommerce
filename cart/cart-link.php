@@ -54,10 +54,10 @@ function blz_eventwoo_pending_booking_message( $EM_Booking = null ){
         );
         if ( in_array( $EM_Booking->get_status(), $unpaid_statuses ) ){
             $output .= '<p class="pending-booking">';
-            $output .= get_option('blz_eventwoo_product_added_message', 'You have a pending booking for this event, we have added an event booking item to your shopping basket,');
+            $output .= get_option('blz_eventwoo_product_added_message', 'Sie haben eine ausstehende Buchung für diese Veranstaltung, wir haben Ihrem Warenkorb eine Veranstaltungsbuchung hinzugefügt.');
             $cart_url = wc_get_cart_url();
             $output .= "<a href='$cart_url'>";
-            $output .= ' ' . get_option( 'blz_eventwoo_product_added_link_to_cart', 'please proceed to the checkout when you are ready.' );
+            $output .= ' ' . get_option( 'blz_eventwoo_product_added_link_to_cart', 'Bitte gehen Sie zur Kasse, wenn Sie bereit sind.' );
             $output .= '</a>';
             $output .= '</p>';
         }
