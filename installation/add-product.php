@@ -16,7 +16,7 @@ function blz_eventwoo_init_product(){
             ?>
             <div class="notice notice-success is-dismissible">
                 <p>
-                    <?php _e( 'WooCommerce Product for Event Bookings has already been created with product SKU - <strong>' . $product_id . '</strong>.', 'eventwoo' ); ?>
+                    <?php _e( 'WooCommerce-Produkt für Event-Buchungen wurde bereits mit dem Produkt SKU erstellt - <strong>' . $product_id . '</strong>.', 'eventwoo' ); ?>
                 </p>
             </div>
             <?php            
@@ -40,7 +40,7 @@ function blz_eventwoo_init_product(){
             ?>
             <div class="notice notice-success is-dismissible">
                 <p>
-                    <?php _e( 'WooCommerce Product for Event Bookings has been created with product ID - <strong>' . $product_id . '</strong>.', 'eventwoo' ); ?>
+                    <?php _e( 'WooCommerce-Produkt für Veranstaltungsbuchungen wurde mit Produkt-ID erstellt - <strong>' . $product_id . '</strong>.', 'eventwoo' ); ?>
                 </p>
             </div>
             <?php            
@@ -64,10 +64,10 @@ function blz_eventwoo_get_product_by_sku( $sku ) {
         if ( $product->get_status() == 'publish' ) {
             return $product;
         } else {
-            error_log ( __( 'Event Booking product not found or published, please check it hasn\'nt been deleted.', 'eventwoo' ) );
+            error_log ( __( 'Event Booking Produkt nicht gefunden oder veröffentlicht, bitte überprüfen Sie, ob es nicht gelöscht wurde.', 'eventwoo' ) );
             return $product;
         }
     }
-    error_log ( __( 'Event Booking product not found or published, please check it hasn\'nt been deleted.', 'eventwoo' ) );
+    error_log ( __( 'Event Booking Produkt nicht gefunden oder veröffentlicht, bitte überprüfen Sie, ob es nicht gelöscht wurde.', 'eventwoo' ) );
     return null;
 }
