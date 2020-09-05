@@ -21,7 +21,7 @@ function blz_eventwoo_registration_form( $event_string, $em_event, $format, $tar
             if ( function_exists( 'wc_get_template' ) ){
                 wc_get_template( 'myaccount/form-login.php' );
             } else {
-                echo __( 'Cart not activated!', 'eventwoo' );
+                echo __( 'Einkaufswagen nicht aktiviert!', 'eventwoo' );
                 error_log ( 'Warning - Could not display registration form as template not found, probably WooCommerce isn\'t activated.' );
             }
             $login_form = '<div class="eventwoo_woocommerce_login_form">' . ob_get_clean() . '</div>';
@@ -52,7 +52,7 @@ function blz_eventwoo_display_wc_messages( $event_string, $em_event, $target ){
         $current_time = new DateTime();
         $timediff = $current_time->getTimestamp() - $user_registered_time->getTimestamp();
         if ( $timediff < 10 ) {
-            $message = get_option( 'blz_eventwoo_registered_message', __('Your account has been created and we\'ve logged you in. We\'ve sent you an email with your username and password.', 'eventwoo' ) );
+            $message = get_option( 'blz_eventwoo_registered_message', __('Ihr Konto wurde erstellt und wir haben Sie eingeloggt. Wir haben Ihnen eine E-Mail mit Ihrem Benutzernamen und Passwort geschickt.', 'eventwoo' ) );
             $event_string = '<p class="notice">' . $message . '</p>' . $event_string;
         }    
     }
